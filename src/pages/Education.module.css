@@ -1,0 +1,341 @@
+/* EDUCATION PAGE — floating glass cards, vibrant colors */
+.page {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+.page::-webkit-scrollbar { display: none; }
+
+.inner {
+  width: min(var(--max-content), calc(100vw - 32px));
+  min-height: 100%;
+  margin: 0 auto;
+  padding: clamp(24px, 5vh, 52px) 0 clamp(24px, 4vh, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vh, 44px);
+}
+
+/* Achievement badges row */
+.achievementRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.achievementBadge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+  animation: slide-up-fade 0.5s var(--ease-spring) both;
+  cursor: default;
+}
+
+.achievementBadge:nth-child(1) { animation-delay: 0.05s; }
+.achievementBadge:nth-child(2) { animation-delay: 0.10s; }
+.achievementBadge:nth-child(3) { animation-delay: 0.15s; }
+.achievementBadge:nth-child(4) { animation-delay: 0.20s; }
+
+.achievementBadge:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-active);
+  box-shadow: 0 20px 56px rgba(0,0,0,0.5);
+}
+
+.badgeIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-subtle);
+  display: grid;
+  place-items: center;
+  color: var(--badge-color, var(--primary));
+  flex-shrink: 0;
+  transition: transform var(--transition-normal);
+}
+
+.achievementBadge:hover .badgeIcon {
+  transform: scale(1.12) rotate(-5deg);
+}
+
+.badgeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.badgeLabel {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.badgeValue {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+/* Education grid */
+.eduGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.eduCard {
+  position: relative;
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  overflow: hidden;
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+  animation: slide-up-fade 0.5s var(--ease-spring) both;
+}
+
+.eduCard:nth-child(1) { animation-delay: 0.10s; }
+.eduCard:nth-child(2) { animation-delay: 0.20s; }
+
+.eduCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-active);
+  box-shadow: 0 28px 72px rgba(0,0,0,0.55);
+}
+
+/* Decorative top bar */
+.eduCardBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-gradient, var(--grad-primary));
+}
+
+/* Header */
+.eduCardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eduIconWrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-subtle);
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.eduMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+}
+
+.eduPeriod {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(167, 139, 250, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.18);
+}
+
+.eduYear {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Degree title */
+.eduDegree {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.35;
+  padding-right: 20px;
+}
+
+/* School */
+.eduSchool {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.eduSchool svg {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* GPA */
+.eduGpa {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  background: var(--bg-white);
+  border: 1px solid var(--border-subtle);
+  align-self: flex-start;
+}
+
+.gpaLabel {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.gpaValue {
+  font-size: 1.2rem;
+  font-weight: 900;
+  background: var(--card-gradient, var(--grad-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Highlights */
+.eduHighlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin-top: 4px;
+}
+
+.eduHighlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.highlightDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--card-gradient, var(--grad-primary));
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* Certifications section */
+.certSection {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.certTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.certTitle svg {
+  color: var(--yellow);
+}
+
+.certGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.certCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.certCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-default);
+}
+
+.certCard strong {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.certCard p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.certIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(167, 139, 250, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .achievementRow { grid-template-columns: repeat(2, 1fr); }
+  .eduGrid { grid-template-columns: 1fr; }
+  .certGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .achievementRow { grid-template-columns: 1fr; }
+}

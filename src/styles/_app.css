@@ -1,0 +1,124 @@
+/* =============================================
+   APP SHELL
+   ============================================= */
+.app-shell {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--bg-base);
+}
+
+/* ---- Animated background ---- */
+.app-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.app-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% -10%, rgba(139, 92, 246, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 80% 110%, rgba(6, 182, 212, 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(236, 72, 153, 0.07) 0%, transparent 60%),
+    var(--bg-base);
+  animation: aurora-drift 20s ease-in-out infinite alternate;
+}
+
+.app-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: center;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 80%, transparent 100%);
+}
+
+/* ---- Top header bar ---- */
+.app-header {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 clamp(16px, 4vw, 40px);
+  pointer-events: none;
+}
+
+.header-logo {
+  font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  pointer-events: auto;
+}
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  pointer-events: auto;
+}
+
+.header-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: blink 2.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* ---- Page container ---- */
+.page-viewport {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: calc(100dvh - var(--header-height) - var(--nav-height) - 18px);
+  overflow: hidden;
+}
+
+/* ---- Tab sections with premium transition ---- */
+.tab-section {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.92) translateY(24px) rotateX(4deg);
+  pointer-events: none;
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: blur(12px);
+  perspective: 1000px;
+  will-change: opacity, transform, filter;
+}
+
+.tab-section.active {
+  opacity: 1;
+  transform: scale(1) translateY(0) rotateX(0);
+  pointer-events: auto;
+  filter: blur(0);
+}
