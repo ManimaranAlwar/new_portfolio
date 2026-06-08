@@ -12,8 +12,29 @@ import bookBuddy from '../assets/bookBuddy.png'
 import placement from '../assets/placement.png'
 import dataAnalyst from '../assets/datanalyst.png'
 import powerBi from '../assets/powerBi.png'
+import retailBilling from '../assets/retail_billing.png'
 
 const projectsData = [
+      {
+    title: 'Billing system for Retail Store',
+    description: 'Comprehensive billing system designed for retail environments, featuring inventory management, sales tracking, and customer invoicing.',
+    image: retailBilling,
+    badge: 'Shopping Cart',
+    category: 'fullstack',
+    tags: ['JavaScript', 'React'],
+    github: 'https://github.com/ManimaranAlwar/billing_system',
+    demo: 'https://billing-system-ecru-xi.vercel.app/',
+  },
+    {
+    title: 'Sales Analytics Dashboard',
+    description: 'Business intelligence dashboard project focused on sales analysis, KPI tracking, and decision-making using data visualization.',
+    image: dataAnalyst,
+    badge: 'Data Analytics',
+    category: 'Analytics',
+    tags: ['Power BI', 'Analytics', 'BI'],
+    github: 'https://github.com/ManimaranAlwar/sales_analytics_dashboard',
+    demo: 'https://www.linkedin.com/posts/manimaran-alwar-3a2342320_im-happy-to-share-this-ipl-2025-batsmans-activity-7342429467258068992-aEVQ?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFE1N6oB_5MXTECCxdouK8o42DIU9W6Z9dA',
+  },
   {
     title: 'English Learning Game for Kids',
     description: 'Interactive web-based game designed to help children learn English through engaging gameplay and educational content.',
@@ -24,16 +45,7 @@ const projectsData = [
     github: 'https://github.com/ManimaranAlwar/english_games',
     demo: 'https://english-games-two.vercel.app/',
   },
-  {
-    title: 'Aadhaar Seed & DBT Awareness Platform',
-    description: 'Smart India Hackathon project focused on increasing awareness of Aadhaar seeding and Direct Benefit Transfer programs.',
-    image: adhaarSeeding,
-    badge: 'Smart India Hackathon',
-    category: 'AI & Data Science',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Analytics', 'Team Lead'],
-    github: 'https://github.com/ManimaranAlwar/Adhar-seed-and-DBT-awearness-SIH-',
-    demo: 'https://manimaranalwar.github.io/Adhar-seed-and-DBT-awearness-SIH-/',
-  },
+
   {
     title: 'Image Enhancement using Python',
     description: 'Image processing application that enhances image quality using Python-based image processing techniques.',
@@ -64,6 +76,16 @@ const projectsData = [
     github: 'https://github.com/ManimaranAlwar/space-game-',
     demo: 'https://book-buddy-pied-psi.vercel.app/',
   },
+    {
+    title: 'Aadhaar Seed & DBT Awareness Platform',
+    description: 'Smart India Hackathon project focused on increasing awareness of Aadhaar seeding and Direct Benefit Transfer programs.',
+    image: adhaarSeeding,
+    badge: 'Smart India Hackathon',
+    category: 'AI & Data Science',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Analytics', 'Team Lead'],
+    github: 'https://github.com/ManimaranAlwar/Adhar-seed-and-DBT-awearness-SIH-',
+    demo: 'https://manimaranalwar.github.io/Adhar-seed-and-DBT-awearness-SIH-/',
+  },
   {
     title: 'Book Buddy Digital Platform',
     description: 'Library-focused web platform designed to support interactive learning through educational content and browser-based games.',
@@ -84,16 +106,7 @@ const projectsData = [
     github: 'https://github.com/ManimaranAlwar/PLACEMENT_INTERFACE_PROJECT_FOR_INTERNSHIP.',
     demo: '#',
   },
-  {
-    title: 'Sales Analytics Dashboard',
-    description: 'Business intelligence dashboard project focused on sales analysis, KPI tracking, and decision-making using data visualization.',
-    image: dataAnalyst,
-    badge: 'Data Analytics',
-    category: 'Analytics',
-    tags: ['Power BI', 'Analytics', 'BI'],
-    github: 'https://github.com/ManimaranAlwar/sales_analytics_dashboard',
-    demo: 'https://www.linkedin.com/posts/manimaran-alwar-3a2342320_im-happy-to-share-this-ipl-2025-batsmans-activity-7342429467258068992-aEVQ?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFE1N6oB_5MXTECCxdouK8o42DIU9W6Z9dA',
-  },
+
   {
     title: 'Power BI Dashboard Suite',
     description: 'Collection of Power BI dashboards for business reporting, performance tracking, and data-driven insights.',
